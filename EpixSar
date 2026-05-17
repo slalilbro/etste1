@@ -1,3 +1,218 @@
+Nilo
+Nilo
+nilosec1
+ROBLOX
+
+GG — 19:28
+.
+.
+.
+.
+.
+Nilo
+Nilo — 19:28
+.
+GG — 19:28
+.
+Nilo
+Nilo — 19:28
+k
+GG — 19:28
+.
+..
+Nilo
+Nilo — 19:28
+kk
+k
+GG — 19:28
+..
+Nilo
+Nilo — 19:28
+k
+GG — 19:28
+.
+.
+Nilo
+Nilo — 19:28
+k
+k
+k
+kk
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+kk
+k
+kk
+k
+Nilo
+Nilo — 19:39
+feito
+GG — 19:40
+.
+ok
+Nilo
+Nilo — 19:40
+vc tem nitro ne
+GG — 19:41
+sim
+me da owner
+eu fico testando
+os hub
+é cria
+vouch
+chat
+Nilo
+Nilo — 19:48
+-- ============================================
+-- SOSA PRIVATE — TP + ANTI-RAGDOLL INTEGRADO
+-- ============================================
+
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+local Players        = game:GetService("Players")
+local RunService     = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService   = game:GetService("TweenService")
+local Workspace      = game:GetService("Workspace")
+local LocalPlayer    = Players.LocalPlayer
+
+-- ══════════════════════════════════════════════════════════
+-- CONFIG
+-- ══════════════════════════════════════════════════════════
+local Config = {
+    Tool        = "Flying Carpet",
+    TpKey       = "T",
+    CloneKey    = "V",
+    AutoTPPriority = true,
+}
+
+local PRIORITY_LIST = {
+    "Strawberry Elephant", "Meowl", "Skibidi Toilet", "Headless Horseman",
+    "Dragon Gingerini", "Dragon Cannelloni", "Cerberus", "Celestial Pegasus",
+}
+
+-- ══════════════════════════════════════════════════════════
+-- POSIÇÕES DAS BASES
+-- ══════════════════════════════════════════════════════════
+local BASES_LOW = {
+    [1]=Vector3.new(-460,-6,219),  [5]=Vector3.new(-355,-6,217),
+    [2]=Vector3.new(-460,-6,111),  [6]=Vector3.new(-355,-6,113),
+    [3]=Vector3.new(-460,-6,5),    [7]=Vector3.new(-355,-6,5),
+    [4]=Vector3.new(-460,-6,-100), [8]=Vector3.new(-355,-6,-100),
+}
+local BASES_HIGH = {
+    [1]=Vector3.new(-476.47,20.73,220.94), [5]=Vector3.new(-342.54,20.70,221.45),
+    [2]=Vector3.new(-476.57,20.71,113.77), [6]=Vector3.new(-342.86,20.67,113.41),
+    [3]=Vector3.new(-476.87,20.74,6.18),   [7]=Vector3.new(-342.42,20.69,6.25),
+    [4]=Vector3.new(-476.63,20.74,-101.07),[8]=Vector3.new(-342.79,20.75,-99.73),
+}
+local CLONE_POSITIONS_FLOOR = {
+    Vector3.new(-476,-4,221), Vector3.new(-476,-4,114),
+    Vector3.new(-476,-4,7),   Vector3.new(-476,-4,-100),
+    Vector3.new(-342,-4,-100),Vector3.new(-342,-4,6),
+    Vector3.new(-342,-4,114), Vector3.new(-342,-4,220),
+}
+local FACE_TARGETS = {
+    Vector3.new(-519,-3,221), Vector3.new(-519,-3,114),
+    Vector3.new(-518,-3,7),   Vector3.new(-519,-3,-100),
+    Vector3.new(-301,-3,-100),Vector3.new(-301,-3,7),
+    Vector3.new(-302,-3,114), Vector3.new(-300,-3,220),
+}
+
+-- ══════════════════════════════════════════════════════════
+-- ESTADO
+-- ══════════════════════════════════════════════════════════
+local isTpMoving = false
+local isCloning  = false
+local AllAnimalsCache = {}
+
+-- ══════════════════════════════════════════════════════════
+-- ANTI-RAGDOLL V2 (integrado)
+-- ══════════════════════════════════════════════════════════
+local antiRagdollConns = {}
+local cleanRagdollV2Scheduled = false
+
+local function cleanRagdollV2(char)
+    if not char then return end
+    local carpetEquipped = false
+    pcall(function()
+        local tool = char:FindFirstChild("Flying Carpet")
+        if tool then
+            local hrp = char:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                for _, obj in ipairs(hrp:GetChildren()) do
+                    if obj:IsA("BodyVelocity") or obj:IsA("BodyPosition") or obj:IsA("BodyGyro") then
+                        carpetEquipped = true
+                        break
+                    end
+                end
+            end
+        end
+    end)
+    for _, d in ipairs(char:GetDescendants()) do
+        if d:IsA("BallSocketConstraint") or d:IsA("NoCollisionConstraint")
+            or d:IsA("HingeConstraint")
+            or (d:IsA("Attachment") and (d.Name == "A" or d.Name == "B")) then
+            d:Destroy()
+        elseif (d:IsA("BodyVelocity") or d:IsA("BodyPosition") or d:IsA("BodyGyro")) and not carpetEquipped then
+            d:Destroy()
+        end
+    end
+    for _, d in ipairs(char:GetDescendants()) do
+        if d:IsA("Motor6D") then d.Enabled = true end
+    end
+    local hum = char:FindFirstChildOfClass("Humanoid")
+... (568 linhas)
+
+message.txt
+29 KB
+GG — 19:49
+ja ja testo
+to jogando com meu primo
+por isso sai da call
+GG — 20:14
+tp
+ta muito rapido
+ta bugando
+Nilo
+Nilo — 20:14
+manda showcase
+GG — 20:14
+diminue a velocidade
+Nilo
+Nilo — 20:14
+se vc ta usando
+no evento cyber n sei n
+Nilo
+Nilo — 20:36
+https://github.com/slalilbro/etste1/blob/main/EpixSar
+GitHub
+etste1/EpixSar at main · slalilbro/etste1
+Contribute to slalilbro/etste1 development by creating an account on GitHub.
+etste1/EpixSar at main · slalilbro/etste1
+GG — 20:36
+?
+﻿
+GG
+gg026232
+HHHHH é scam
+ 
+ 
+-- ============================================
+-- SOSA PRIVATE — TP + ANTI-RAGDOLL INTEGRADO
+-- ============================================
+
 if not game:IsLoaded() then game.Loaded:Wait() end
 
 local Players        = game:GetService("Players")
